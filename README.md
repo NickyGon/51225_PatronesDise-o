@@ -1,2 +1,2 @@
-# 51225_PatronesDise-o
-Repositorio para cer patrones de diseño
+# 51225_PatronesDiseño
+Repositorio para los resultados de los ejercicios en patrones de diseño
