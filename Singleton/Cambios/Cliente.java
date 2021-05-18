@@ -2,12 +2,25 @@ package singleton.ejercicios;
 
 public class Cliente {
     public static void main(String[]args){
-        CasaDeCambio cc1=new CasaDeCambio();
-        cc1.cambiarDinero(70,"Bs","$");
-        CasaDeCambio cc2=new CasaDeCambio();
-        cc2.cambiarDinero(80,"E","Bs");
-        LibreCambista lb1=new LibreCambista();
-        lb1.cambiarDinero(90,"Bs","$");
+
+        Thread Jose=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                LibreCambista cambista1= new LibreCambista();
+                cambista1.cambiarDinero(100,"Bs","E");
+            }
+        });
+
+        Thread Maria=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Banco banco3=new Banco();
+                banco3.cambiarDinero(800,"$","E");
+            }
+        });
+
+        Jose.start();
+        Maria.start();
 
     }
 }

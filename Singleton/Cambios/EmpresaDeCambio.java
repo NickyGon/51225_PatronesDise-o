@@ -12,16 +12,20 @@ public class EmpresaDeCambio {
         System.out.println("Inicializando el programa");
     }
 
+    public static synchronized void makeInstance(){
+        if (instance==null)
+            instance=new EmpresaDeCambio();
+    }
 
     public static EmpresaDeCambio getInstance(){
         if (instance==null)
-            instance=new EmpresaDeCambio();
+            makeInstance();
         return instance;
     }
 
-    public synchronized void getChange(int amount,String type,String objective){
+    public synchronized void getChange(String origin,int amount,String type,String objective){
        double change=amount*analyzeMultiplier(type,objective);
-       System.out.println("<---"+amount+type+"--->"+change+objective);
+       System.out.println(origin+"<---"+amount+type+"--->"+change+objective);
     }
 
     private double analyzeMultiplier(String type, String objective) {
