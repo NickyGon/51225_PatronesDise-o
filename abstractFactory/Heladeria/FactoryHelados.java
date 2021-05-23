@@ -1,4 +1,4 @@
-package abstractFactory.ejercicios.Heladeria;
+package abstractFactory.Heladeria;
 
 public class FactoryHelados {
     public enum Helado{
